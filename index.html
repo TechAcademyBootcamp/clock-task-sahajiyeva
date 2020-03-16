@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html,body {
+    height: 100%;
+}
+body {
+    background: #0f3854;
+    background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 70%);
+    background-size: 100%;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+#clock {
+    font-family: 'Share Tech Mono', monospace;
+    color: #ffffff;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #daf6ff;
+    text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+}
+    .time {
+        letter-spacing: 0.05em;
+        font-size: 80px;
+        padding: 5px 0;
+    }
+    .date {
+        letter-spacing: 0.1em;
+        font-size: 24px;
+    }
+    .text {
+        letter-spacing: 0.1em;
+        font-size: 12px;
+        padding: 20px 0 0;
+    }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="clock">
+        <p class="date" id="date"></p>
+        <p class="time" id="time"></p>
+        <p class="text">DIGITAL CLOCK</p>
+    </div>
+
+    <script>
+
+        var set_interval_seconds = setInterval(function(){ seconds();}, 1000);
+
+        // document.addEventListener("DOMContentLoaded", function(myFunction) { 
+        // //do work
+        // });
+
+        function addZero(i) {
+        if (i < 10) {
+        i = "0" + i;
+        }
+        return i;
+        }
+        
+        function seconds() {
+            var d = new Date();
+            var hour = addZero(d.getHours());
+            var minute = addZero(d.getMinutes());
+            var second = addZero(d.getSeconds());
+            document.getElementById("time").innerHTML = hour + ":" + minute + ":" + second;
+        }
+        // counter = 0;
+        // function myStopFunction() {
+        //     if(.) {
+        //     clearInterval(myVar);
+        //     }
+        // }
+
+    </script>
+</body>
+</html>
